@@ -105,7 +105,7 @@ def login():
 
             
             flash('Login successful!', 'success')
-            return redirect(url_for('main.dashboard')) # Assuming Dashboard Route exists
+            return redirect(url_for('main_dashboard.dashboard')) # Assuming Dashboard Route exists
         else:
             flash('Invalid username or password', 'error')
             return redirect(url_for('auth.login'))
@@ -165,7 +165,7 @@ def delete_account():
         
         session.clear()
         flash('Account deleted successfully.', 'info')
-        return redirect(url_for('main.index'))
+        return redirect(url_for('main_dashboard.index'))
     except Exception as e:
         flash(f'Error deleting account: {str(e)}', 'error')
-        return redirect(url_for('main.dashboard'))
+        return redirect(url_for('main_dashboard.dashboard'))
